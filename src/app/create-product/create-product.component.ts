@@ -20,8 +20,10 @@ export class CreateProductComponent implements OnInit {
   ngOnInit(): void {
     this.productFormGroup=this.fb.group({
       name:this.fb.control(null,[Validators.required,Validators.minLength(4)]),
-      price:this.fb.control(null,[Validators.required,Validators.min(200)]),
-      promotion:this.fb.control(false,[Validators.required])
+      description:this.fb.control(null,[Validators.required,Validators.minLength(6)]),
+      Designation:this.fb.control(null,[Validators.required,Validators.minLength(3)]),
+      categoryName:this.fb.control(null,[Validators.required,Validators.minLength(3)]),
+      refProduit:this.fb.control(null,[Validators.required,Validators.minLength(4)])
     })
   }
 

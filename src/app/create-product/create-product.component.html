@@ -5,25 +5,42 @@
         <h5 class="card-title text-center">Create new product</h5>
       <form [formGroup]="productFormGroup" (ngSubmit)="handleCreateProduct()">
         <div class="mb-3">
-          <label for="validationDefault01" class="form-label">Name</label>
+          <label for="validationDefault01" class="form-label">Nom</label>
           <input type="text" formControlName="name" class="form-control">
           <small *ngIf="productFormGroup.controls['name'].errors && productFormGroup.controls['name'].touched" class="text-danger">
-            {{productService.errorProduct('Name',productFormGroup.controls['name'].errors)}}
+            {{productService.errorProduct('Nom',productFormGroup.controls['name'].errors)}}
           </small>
         </div>
         <div class="mb-3">
-          <label for="validationDefault01" class="form-label">Price</label>
-          <input type="text" formControlName="price" class="form-control">
-          <small *ngIf="productFormGroup.controls['price'].errors && productFormGroup.controls['price'].touched" class="text-danger">
-            {{productService.errorProduct('Price',productFormGroup.controls['price'].errors)}}
+          <label for="validationDefault01" class="form-label">Description</label>
+          <input type="text" formControlName="description" class="form-control">
+          <small *ngIf="productFormGroup.controls['description'].errors && productFormGroup.controls['description'].touched" class="text-danger">
+            {{productService.errorProduct('Description',productFormGroup.controls['description'].errors)}}
           </small>
         </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox">
-          <label class="form-check-label" formControlName="promotion">Promotion</label>
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Designation</label>
+          <input type="text" formControlName="Designation" class="form-control">
+          <small *ngIf="productFormGroup.controls['Designation'].errors && productFormGroup.controls['Designation'].touched" class="text-danger">
+            {{productService.errorProduct('Designation',productFormGroup.controls['Designation'].errors)}}
+          </small>
         </div>
         <div class="mb-3">
-          <button [disabled]="productFormGroup.invalid" class="btn btn-primary" type="submit">Add Product</button>
+          <label for="validationDefault01" class="form-label">Catégorie</label>
+          <input type="text" formControlName="categoryName" class="form-control">
+          <small *ngIf="productFormGroup.controls['categoryName'].errors && productFormGroup.controls['categoryName'].touched" class="text-danger">
+            {{productService.errorProduct('Catégorie',productFormGroup.controls['categoryName'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Référence</label>
+          <input type="text" formControlName="refProduit" class="form-control">
+          <small *ngIf="productFormGroup.controls['refProduit'].errors && productFormGroup.controls['refProduit'].touched" class="text-danger">
+            {{productService.errorProduct('Référence',productFormGroup.controls['refProduit'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <button [disabled]="productFormGroup.invalid" class="btn btn-primary" type="submit">Enregistrer</button>
         </div>
       </form>
     </div>

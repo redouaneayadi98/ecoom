@@ -61,10 +61,11 @@
           <td>{{p.Designation}}</td>
           <td>{{p.categoryName}}</td>
           <td>{{p.refProduit}}</td>
-          <td *ngIf="authService.hasRole('ADMIN')">
-            <button (click)="handleDeleteProduct(p.id)" class="btn btn-outline-danger btn-sm m-1 bi bi-trash"></button>
-            <a [routerLink]="['/admin/update',p.id]" class="btn btn-outline-primary btn-sm m-1 bi bi-pencil-square"></a>
-          </td>
+          <!-- <td *ngIf="authService.hasRole('ADMIN')"> -->
+            <td>
+              <button (click)="handleDeleteProduct(p.id)" class="btn btn-outline-danger btn-sm m-1 bi bi-trash"></button>
+              <a [routerLink]="['/admin/update',p.id]" class="btn btn-outline-primary btn-sm m-1 bi bi-pencil-square"></a>
+            </td>
         </tr>
       </tbody>
     </table>

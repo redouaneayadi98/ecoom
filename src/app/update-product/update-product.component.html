@@ -4,6 +4,7 @@
       <div class="card-body">
         <h5 class="card-title text-center">Modifier Produit</h5>
       <form [formGroup]="productFormGroup" (ngSubmit)="handleUpdateProduct()">
+        <img src="./assets/images/contact.jpg" class="img-fluid" alt="image">
         <div class="mb-3">
           <label for="validationDefault01" class="form-label">Nom</label>
           <input type="text" formControlName="name" class="form-control">
