@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="card col-6 ">
+      <div class="card-body">
+        <h5 class="card-title text-center">Create new product</h5>
+      <form [formGroup]="productFormGroup" (ngSubmit)="handleCreateProduct()">
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control">
+          <small *ngIf="productFormGroup.controls['name'].errors && productFormGroup.controls['name'].touched" class="text-danger">
+            {{productService.errorProduct('Name',productFormGroup.controls['name'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Price</label>
+          <input type="text" formControlName="price" class="form-control">
+          <small *ngIf="productFormGroup.controls['price'].errors && productFormGroup.controls['price'].touched" class="text-danger">
+            {{productService.errorProduct('Price',productFormGroup.controls['price'].errors)}}
+          </small>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label" formControlName="promotion">Promotion</label>
+        </div>
+        <div class="mb-3">
+          <button [disabled]="productFormGroup.invalid" class="btn btn-primary" type="submit">Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

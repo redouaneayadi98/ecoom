@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div *ngIf="errorMessage!=''" class="row justify-content-center">
+    <div class="alert text-center alert-danger" style="width: 300px;">
+      {{errorMessage}}
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="card col-6 ">
+      <div class="card-body">
+        <h5 class="card-title text-center">Login</h5>
+      <form [formGroup]="userFormGroup" (ngSubmit)="handelLogin()">
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Username</label>
+          <input type="text" formControlName="username" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault01" class="form-label">Password</label>
+          <input type="password" formControlName="password" class="form-control">
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-primary" type="submit">Connexion</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
