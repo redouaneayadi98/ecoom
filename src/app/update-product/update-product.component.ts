@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
+import { Product } from '../model/Product';
 
 @Component({
   selector: 'app-update-product',
@@ -10,6 +11,7 @@ import { ProductService } from '../services/product.service';
 })
 export class UpdateProductComponent implements OnInit {
 
+  product1:Product|undefined
   productFormGroup!:FormGroup
   id:any
   constructor(private fb:FormBuilder,
@@ -24,6 +26,7 @@ export class UpdateProductComponent implements OnInit {
       this.id=param.get('id')
     })
     let product=this.productService.products.find(p=>p.id==this.id)
+    this.product1=product
     this.productFormGroup=this.fb.group({
       name:this.fb.control(product?.name,[Validators.required,Validators.minLength(3)]),
       description:this.fb.control(product?.description,[Validators.required,Validators.minLength(6)]),
